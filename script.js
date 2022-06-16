@@ -24,32 +24,46 @@ let random = randomNumber();
     }
 }
 
+function playerSelection() {
+    let userChoice = prompt("What's your weapon?","ROCK? PAPER? SCISSORS?").toLowerCase();
+    if (userChoice === "rock" || userChoice === "paper" || userChoice === "scissors") {
+        return userChoice;
+    }
+    else {
+        alert("Wrong choice, select again!");
+        playerSelection();
+    }
+}
+
+
 
 function playRound(player, computer) {
     console.log(player,computer)
     if(player === computer) {
         alert("Draw!");
-        alert(`Player choice: ${player} Computer choice: ${computer}`);
+        alert(`Computer Selected: ${computer.toUpperCase()}`);
         return "Draw!"
     }
     else if(player === "rock" && computer === "scissors" || 
     player === "paper" && computer === "rock" ||
     player === "scissors" && computer === "paper") {
         alert("You Win!");
-        alert(`Player choice: ${player} Computer choice: ${computer}`);
+        alert(`Computer Selected: ${computer.toUpperCase()}`);
         return "You Win!"
     }
     else if(player === "rock" && computer === "paper" || 
     player === "paper" && computer === "scissors" ||
     player === "scissors" && computer === "rock") {
         alert("You Lost!");
-        alert(`Player choice: ${player} Computer choice: ${computer}`);
+        alert(`Computer Selected: ${computer.toUpperCase()}`);
         return "You Lose!"
     }
 }
 
 function showScore() {
-    alert(`Round: ${roundScore} Player score: ${playerScore} Computer score: ${computerScore}`)
+    alert(`Round: ${roundScore}
+    Player score: ${playerScore} 
+    Computer score: ${computerScore}`)
 }
 
 function finalResult() {
@@ -64,10 +78,12 @@ function keepScore(score) {
     }
     else if (score === "You Win!") {
         roundScore++;
+        playerScore++;
         showScore();
     }
     else if (score === "You Lose!") {
         roundScore++;
+        computerScore++;
         showScore();
     }
     //alert(`round score:${roundScore}` ` ` `player score:${playerScore}` ` ` `computer score:${computerScore}`)
@@ -76,8 +92,7 @@ function keepScore(score) {
 
 function game() {
     for (let i = 0; i < 5; i++) {
-       let playerSelection = prompt("What's your weapon?","ROCK? PAPER? SCISSORS?").toLowerCase();
-       keepScore(playRound(playerSelection, computerSelection()));
+       keepScore(playRound(playerSelection(), computerSelection()));
      }
 }
 
