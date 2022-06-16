@@ -26,12 +26,13 @@ let random = randomNumber();
 
 function playerSelection() {
     let userChoice = prompt("What's your weapon?","ROCK? PAPER? SCISSORS?").toLowerCase();
+
     if (userChoice === "rock" || userChoice === "paper" || userChoice === "scissors") {
         return userChoice;
     }
     else {
         alert("Wrong choice, select again!");
-        playerSelection();
+        return playerSelection();
     }
 }
 
@@ -40,34 +41,43 @@ function playerSelection() {
 function playRound(player, computer) {
     console.log(player,computer)
     if(player === computer) {
-        alert("Draw!");
+        alert("This round is draw!");
         alert(`Computer Selected: ${computer.toUpperCase()}`);
         return "Draw!"
     }
     else if(player === "rock" && computer === "scissors" || 
     player === "paper" && computer === "rock" ||
     player === "scissors" && computer === "paper") {
-        alert("You Win!");
+        alert("You win this round!");
         alert(`Computer Selected: ${computer.toUpperCase()}`);
         return "You Win!"
     }
     else if(player === "rock" && computer === "paper" || 
     player === "paper" && computer === "scissors" ||
     player === "scissors" && computer === "rock") {
-        alert("You Lost!");
+        alert("You lost this round!");
         alert(`Computer Selected: ${computer.toUpperCase()}`);
         return "You Lose!"
     }
 }
 
 function showScore() {
-    alert(`Round: ${roundScore}
+    alert(`
+    Round: ${roundScore}
     Player score: ${playerScore} 
     Computer score: ${computerScore}`)
 }
 
 function finalResult() {
-
+    if (playerScore === computerScore) {
+        alert("DRAW!")
+    }
+    else if(playerScore > computerScore) {
+        alert("YOU WON!")
+    }
+    else {
+        alert("YOU LOST!")
+    }
 }
 
 
@@ -94,6 +104,7 @@ function game() {
     for (let i = 0; i < 5; i++) {
        keepScore(playRound(playerSelection(), computerSelection()));
      }
+     finalResult()
 }
 
 game();
