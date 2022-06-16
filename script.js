@@ -29,18 +29,21 @@ function playRound(player, computer) {
     console.log(player,computer)
     if(player === computer) {
         alert("Draw!");
+        alert(`Player choice: ${player} Computer choice: ${computer}`);
         return "Draw!"
     }
     else if(player === "rock" && computer === "scissors" || 
     player === "paper" && computer === "rock" ||
     player === "scissors" && computer === "paper") {
         alert("You Win!");
+        alert(`Player choice: ${player} Computer choice: ${computer}`);
         return "You Win!"
     }
     else if(player === "rock" && computer === "paper" || 
     player === "paper" && computer === "scissors" ||
     player === "scissors" && computer === "rock") {
-        alert("You Lose!");
+        alert("You Lost!");
+        alert(`Player choice: ${player} Computer choice: ${computer}`);
         return "You Lose!"
     }
 }
@@ -49,10 +52,14 @@ function showScore() {
     alert(`Round: ${roundScore} Player score: ${playerScore} Computer score: ${computerScore}`)
 }
 
+function finalResult() {
+
+}
 
 
 function keepScore(score) {
     if (score === "Draw!") {
+        roundScore++;
         showScore();
     }
     else if (score === "You Win!") {
