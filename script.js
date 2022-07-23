@@ -1,6 +1,10 @@
-//const playerSelection = prompt("What's your weapon?","ROCK? PAPER? SCISSORS?").toLowerCase();
+const buttons = document.querySelectorAll("button");
+const display_choice = document.querySelector(".display_choice");
+const comp_choice = document.querySelector(".comp_choice");
+const score = document.querySelector(".score");
 let playerScore = 0;
 let computerScore = 0;
+let drawScore = 0;
 let roundScore = 0;
 
 
@@ -39,50 +43,54 @@ function playerSelection() {
 
 
 function playRound(player, computer) {
-    console.log(player,computer)
+    if (playerScore === 5 || computerScore === 5) {
+        return;
+    }
     if(player === computer) {
-        alert("This round is draw!");
-        alert(`Computer Selected: ${computer.toUpperCase()}`);
+        display_choice.textContent = `Computer Selected: ${computer.toUpperCase()}`;
+        comp_choice.textContent = "This round is draw!";
         return "Draw!"
     }
     else if(player === "rock" && computer === "scissors" || 
     player === "paper" && computer === "rock" ||
     player === "scissors" && computer === "paper") {
-        alert("You win this round!");
-        alert(`Computer Selected: ${computer.toUpperCase()}`);
+        display_choice.textContent = `Computer Selected: ${computer.toUpperCase()}`;
+        comp_choice.textContent = "You win this round!"; 
         return "You Win!"
     }
     else if(player === "rock" && computer === "paper" || 
     player === "paper" && computer === "scissors" ||
     player === "scissors" && computer === "rock") {
-        alert("You lost this round!");
-        alert(`Computer Selected: ${computer.toUpperCase()}`);
+        display_choice.textContent = `Computer Selected: ${computer.toUpperCase()}`;
+        comp_choice.textContent = "You lost this round!"
         return "You Lose!"
     }
 }
 
 function showScore() {
-    alert(`
+    score.textContent = `
     Round: ${roundScore}
-    Player score: ${playerScore} 
-    Computer score: ${computerScore}`)
+    Player: ${playerScore}  
+    Computer: ${computerScore}
+    Draw: ${drawScore}`
 }
 
 function finalResult() {
     if (playerScore === computerScore) {
-        alert("DRAW!")
+        comp_choice.textContent = "DRAW!"
     }
     else if(playerScore > computerScore) {
-        alert("YOU WON!")
+        comp_choice.textContent = "YOU WON!"
     }
     else {
-        alert("YOU LOST!")
+        comp_choice.textContent = "YOU LOST!"
     }
 }
 
 
 function keepScore(score) {
     if (score === "Draw!") {
+        drawScore++;
         roundScore++;
         showScore();
     }
@@ -96,23 +104,18 @@ function keepScore(score) {
         computerScore++;
         showScore();
     }
+    if (playerScore === 5 || computerScore === 5) {
+        finalResult()
+    }
     //alert(`round score:${roundScore}` ` ` `player score:${playerScore}` ` ` `computer score:${computerScore}`)
 }
 
 
-function game() {
-    for (let i = 0; i < 5; i++) {
-       keepScore(playRound(playerSelection(), computerSelection()));
-     }
-     finalResult()
-}
-
-const buttons = document.querySelectorAll("button");
 
 buttons.forEach((button) => {
 
     // and for each one we add a 'click' listener
     button.addEventListener('click', () => {
-       playRound(button.className, computerSelection())
+        keepScore(playRound(button.className, computerSelection()));
     });
   });
