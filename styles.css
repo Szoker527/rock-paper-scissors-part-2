@@ -18,6 +18,7 @@ body {
     font-family: 'Kanit', sans-serif;
     font-size: 2rem; 
     color: white;
+    margin-bottom: 25px;
   }
 
   .display-section {
@@ -46,16 +47,30 @@ body {
 
   .btn {
     height: 20vh;
-    width: 10vw;
+    width: 11vw;
     color: white;
     overflow: hidden;
-    border: 3px solid #060;
+    /* border: 2px solid white; */
+    transition: 0.5s;
+  }
+
+  .btn:hover {
+    padding: 15px;
   }
 
   .rock {
-    margin-left: 30px;
+    margin-top: 10px;
+    margin-left: 49px;
   }
 
+  .paper {
+    margin-top: 10px;
+  }
+
+  .scissors {
+    margin-left: 10px;
+    margin-top: 15px;
+  }
   .screen {
     animation: colorPulse 5s infinite ease-in-out;
     background-image: radial-gradient(#444, #111);
@@ -147,6 +162,7 @@ body {
   }
 
   .footer-text {
+    padding: 20px;
     color: white;
   }
 
