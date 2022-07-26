@@ -21,9 +21,19 @@ body {
 
   .display-section {
     display: flex;
-    align-items: center;
     justify-content: center;
     flex: 2;
+  }
+
+  .tv-section {
+    display: flex;
+
+    justify-content: center;
+  }
+
+  .tv {
+    height: 48vh;
+    z-index: 3;
   }
 
   .game-buttons {
@@ -40,8 +50,10 @@ body {
     position: absolute;
     overflow: hidden;
     padding: 5vmin;
-    width: 30vw;
-    height: 32vh;
+    width: 23vw;
+    height: 37vh;
+    margin-top: 2rem;
+    margin-right: 7rem;
   }
   
   .screen:before {
