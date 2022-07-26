@@ -7,7 +7,7 @@
 }
 
 body {
-    background-color: white;
+    background-color: black;
     min-height: 100vh;
     overflow: hidden;
     display: flex;
@@ -16,7 +16,8 @@ body {
 
   .headline {
     font-family: 'Kanit', sans-serif;
-    font-size: 2rem;
+    font-size: 2rem; 
+    color: white;
   }
 
   .display-section {
@@ -37,7 +38,22 @@ body {
   }
 
   .game-buttons {
+    display: flex;
     flex: 1;
+    justify-content: center;
+    gap: 5rem;
+  }
+
+  .btn {
+    height: 20vh;
+    width: 10vw;
+    color: white;
+    overflow: hidden;
+    border: 3px solid #060;
+  }
+
+  .rock {
+    margin-left: 30px;
   }
 
   .screen {
@@ -55,8 +71,11 @@ body {
     margin-top: 2rem;
     margin-right: 7rem;
   }
+  p {
+    color: white;
+  }
   
-  .screen:before {
+  /* .screen:before {
     animation:wave 10s infinite ease-in-out;
     content:"";
     height:20vh;
@@ -78,9 +97,10 @@ body {
     right:0;
     top:0;
     z-index:2;
-  }
+  } */
   
-  p:last-child:after {
+  
+  /* p:last-child:after {
     animation:blink 1s infinite;
     content:"_";
   }
@@ -118,12 +138,16 @@ body {
     50% {
       opacity:0;
     }
-  }
+  } */
 
 
   .headline,
   .footer-text {
     text-align: center;
+  }
+
+  .footer-text {
+    color: white;
   }
 
 
