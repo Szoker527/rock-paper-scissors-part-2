@@ -93,6 +93,14 @@ body {
     gap: 3rem;
   }
 
+  .rules {
+    font-size: 25px;
+  }
+
+  .hidden {
+    display: none;
+  }
+
   .title {
     font-size: 25px;
   }
