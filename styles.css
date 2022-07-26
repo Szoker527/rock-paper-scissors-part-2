@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@700&family=Ubuntu:wght@700&display=swap');
+
 * { 
     margin: 0;
     padding: 0;
@@ -10,6 +12,11 @@ body {
     overflow: hidden;
     display: flex;
     flex-direction: column;
+  }
+
+  .headline {
+    font-family: 'Kanit', sans-serif;
+    font-size: 2rem;
   }
 
   .display-section {
