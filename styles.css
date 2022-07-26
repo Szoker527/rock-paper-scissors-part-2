@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@700&family=Ubuntu:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 
 * { 
     margin: 0;
@@ -15,8 +15,8 @@ body {
   }
 
   .headline {
-    font-family: 'Kanit', sans-serif;
-    font-size: 2rem; 
+    font-family: 'Indie Flower', cursive;
+    font-size: 2.3rem; 
     color: white;
     margin-bottom: 25px;
   }
@@ -71,13 +71,15 @@ body {
     margin-left: 10px;
     margin-top: 15px;
   }
+
   .screen {
     animation: colorPulse 5s infinite ease-in-out;
     background-image: radial-gradient(#444, #111);
     box-shadow: 0 0 5vmin 1vmin #000 inset;
     box-sizing: border-box;
-    font-family: 'Fira Mono', monospace;
-    font-size: 1rem;
+    color: white;
+    font-family: 'Indie Flower', cursive;
+    font-size: 2rem;
     position: absolute;
     overflow: hidden;
     padding: 5vmin;
@@ -85,11 +87,38 @@ body {
     height: 37vh;
     margin-top: 2rem;
     margin-right: 7rem;
+    display: flex;
   }
-  p {
-    color: white;
+
+  .gap {
+    gap: 3rem;
+  }
+
+  .title {
+    font-size: 25px;
+  }
+
+  .score {
+    text-align: center;
+    margin-top: 130px;
+    margin-left: 40px;
+  }
+
+  .user-score,
+  .pc-score {
+    font-size: 3rem;
   }
   
+  .score-top {
+    margin-top: 85px;
+    font-size: 40px;
+  }
+
+  .score-bottom {
+    margin-top: 20px;
+    font-size: 60px;
+  }
+
   /* .screen:before {
     animation:wave 10s infinite ease-in-out;
     content:"";
