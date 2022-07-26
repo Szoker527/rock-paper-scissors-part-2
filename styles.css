@@ -87,7 +87,6 @@ body {
     height: 37vh;
     margin-top: 2rem;
     margin-right: 7rem;
-    display: flex;
   }
 
   .gap {
@@ -98,92 +97,22 @@ body {
     font-size: 25px;
   }
 
+  .round-result img {
+    height: 120px;
+    margin-left: 110px;
+  }
+
   .score {
+    display: inline-block;
     text-align: center;
-    margin-top: 130px;
-    margin-left: 40px;
+    margin-top: 10px;
+    margin-left: 50px;
   }
 
   .user-score,
   .pc-score {
     font-size: 3rem;
   }
-  
-  .score-top {
-    margin-top: 85px;
-    font-size: 40px;
-  }
-
-  .score-bottom {
-    margin-top: 20px;
-    font-size: 60px;
-  }
-
-  /* .screen:before {
-    animation:wave 10s infinite ease-in-out;
-    content:"";
-    height:20vh;
-    left:0;
-    opacity:.5;
-    position:absolute;
-    right:0;
-    z-index:1;
-  }
-  
-  .screen:after {
-    background-image:linear-gradient(transparent, transparent 3px, #222);
-    background-size:4px 4px;
-    bottom:0;
-    content:"";
-    left:0;
-    pointer-events:none;
-    position:absolute;
-    right:0;
-    top:0;
-    z-index:2;
-  } */
-  
-  
-  /* p:last-child:after {
-    animation:blink 1s infinite;
-    content:"_";
-  }
-  
-  @keyframes colorPulse {
-    0%, 100% {
-      color:#0c0;
-    }
-    48%, 52% {
-      color:#090;
-    }
-    50% {
-      color:#060;
-    }
-  }
-  
-  @keyframes wave {
-    0% {
-      box-shadow:0 -10vh 20vh #0c0;
-      top:-100vh;
-    }
-    48%, 52% {
-      box-shadow:0 -10vh 20vh #090;
-    }
-    50% {
-      box-shadow:0 -10vh 20vh #060;
-    }
-    100% {
-      box-shadow:0 -10vh 20vh #0c0;
-      top:200vh;
-    }
-  }
-  
-  @keyframes blink {
-    50% {
-      opacity:0;
-    }
-  } */
-
 
   .headline,
   .footer-text {
@@ -195,31 +124,3 @@ body {
     color: white;
   }
 
-
-/* 
- h1 {
-    color: black;
-    font-size: 45px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
-}
-
-button {
-    padding: 25px;
-}
-
-.result_display {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 70px;
-}  */
