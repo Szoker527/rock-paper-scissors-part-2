@@ -59,16 +59,19 @@ function playRound(player, computer) {
         return;
     }
     if(player === computer) {
+        screen_image.src = "images/todd.png"
         return "Draw!"
     }
     else if(player === "rock" && computer === "scissors" || 
     player === "paper" && computer === "rock" ||
     player === "scissors" && computer === "paper") {
+        screen_image.src = "images/win.png"
         return "You Win!"
     }
     else if(player === "rock" && computer === "paper" || 
     player === "paper" && computer === "scissors" ||
     player === "scissors" && computer === "rock") {
+        screen_image.src = "images/lost.png"
         return "You Lose!"
     }
 }
