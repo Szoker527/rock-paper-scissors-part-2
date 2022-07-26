@@ -58,16 +58,16 @@ body {
     padding: 15px;
   }
 
-  .rock {
+  .rock-img {
     margin-top: 10px;
     margin-left: 49px;
   }
 
-  .paper {
+  .paper-img {
     margin-top: 10px;
   }
 
-  .scissors {
+  .scissors-img {
     margin-left: 10px;
     margin-top: 15px;
   }

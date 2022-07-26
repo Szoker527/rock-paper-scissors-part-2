@@ -1,7 +1,13 @@
-const buttons = document.querySelectorAll("button");
-const display_choice = document.querySelector(".display_choice");
-const comp_choice = document.querySelector(".comp_choice");
-const score = document.querySelector(".score");
+const buttons = document.querySelectorAll(".btn");
+const user_score = document.querySelector(".user-score");
+const pc_score = document.querySelector(".pc-score");
+const user_final = document.querySelector(".user-final");
+const pc_final = document.querySelector(".pc-final");
+const final_score = document.querySelector(".final-text");
+const first_screen = document.querySelector("#first-screen");
+const second_screen = document.querySelector("#second-screen");
+const third_screen = document.querySelector("#third-screen");
+const screen_image = document.getElementById("screen-image");
 let playerScore = 0;
 let computerScore = 0;
 let drawScore = 0;
@@ -43,47 +49,44 @@ function playerSelection() {
 
 
 function playRound(player, computer) {
+    first_screen.classList.add('hidden');
+    second_screen.classList.remove('hidden');
     if (playerScore === 5 || computerScore === 5) {
+        second_screen.classList.add('hidden');
+        third_screen.classList.remove('hidden');
+        pc_final.textContent = `${computerScore}`
+        user_final.textContent = `${playerScore}`
         return;
     }
     if(player === computer) {
-        display_choice.textContent = `Computer Selected: ${computer.toUpperCase()}`;
-        comp_choice.textContent = "This round is draw!";
         return "Draw!"
     }
     else if(player === "rock" && computer === "scissors" || 
     player === "paper" && computer === "rock" ||
     player === "scissors" && computer === "paper") {
-        display_choice.textContent = `Computer Selected: ${computer.toUpperCase()}`;
-        comp_choice.textContent = "You win this round!"; 
         return "You Win!"
     }
     else if(player === "rock" && computer === "paper" || 
     player === "paper" && computer === "scissors" ||
     player === "scissors" && computer === "rock") {
-        display_choice.textContent = `Computer Selected: ${computer.toUpperCase()}`;
-        comp_choice.textContent = "You lost this round!"
         return "You Lose!"
     }
 }
 
 function showScore() {
-    score.textContent = `
-    Round: ${roundScore}
-    Player: ${playerScore}  
-    Computer: ${computerScore}
-    Draw: ${drawScore}`
+    pc_score.textContent = `${computerScore}`
+    user_score.textContent = `${playerScore}`
 }
 
 function finalResult() {
     if (playerScore === computerScore) {
-        comp_choice.textContent = "DRAW!"
+        final_score.textContent = "DRAW!"
     }
     else if(playerScore > computerScore) {
-        comp_choice.textContent = "YOU WON!"
+        final_score.textContent = "Congratz you won!"
     }
     else {
-        comp_choice.textContent = "YOU LOST!"
+        final_score.textContent = "Sadly you lost!"
     }
 }
 
@@ -116,6 +119,6 @@ buttons.forEach((button) => {
 
     // and for each one we add a 'click' listener
     button.addEventListener('click', () => {
-        keepScore(playRound(button.className, computerSelection()));
+        keepScore(playRound(button.id, computerSelection()));
     });
   });

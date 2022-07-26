@@ -15,14 +15,14 @@
     <div class="display-section">
         <div class="tv-section">
             <img src="images/tv.png" alt="" class="tv">
-            <div class="screen rules hidden">
+            <div class="screen rules" id="first-screen">
                 <div>1. Chose from three options below every round</div>
                 <div>2. Game will be played until one player wins five times</div>
                 <div>3. To start the game click on any of the option below</div>
             </div>
-            <div class="screen gap hidden">
+            <div class="screen gap hidden" id="second-screen">
                 <div class="round-result">
-                    <img src="images/lost.png" alt="">
+                    <img src="images/lost.png" alt="" id="screen-image">
                 </div>
                 <div class="score">
                     <div>YOU</div>
@@ -33,28 +33,28 @@
                     <div class="pc-score">0</div>
                 </div>
             </div>
-            <div class="screen">
-                <div class="final-text"><span>Congratz you won!</span></div>
+            <div class="screen hidden" id="third-screen">
+                <div><span class="final-text">Congratz you won!</span></div>
                 <div class="score">
                     <div>YOU</div>
-                    <div class="user-score">0</div>
+                    <div class="user-final">0</div>
                 </div>
                 <div class="score">
                     <div>COMPUTER</div>
-                    <div class="pc-score">0</div>
+                    <div class="pc-final">0</div>
                 </div>
             </div>
         </div>
     </div>
     <div class="game-buttons">
-        <div class="btn">   
-            <img src="images/rock.png" alt="" class="rock">
+        <div class="btn" id="rock">   
+            <img src="images/rock.png" alt="" class="rock-img">
         </div>
-        <div class="btn">
-            <img src="images/paper.png" alt="" class="paper">
+        <div class="btn" id="paper">
+            <img src="images/paper.png" alt="" class="paper-img">
         </div>
-        <div class="btn">
-            <img src="images/scissors.png" alt="" class="scissors">
+        <div class="btn" id="scissors">
+            <img src="images/scissors.png" alt="" class="scissors-img">
         </div>
     </div>
     <footer>
