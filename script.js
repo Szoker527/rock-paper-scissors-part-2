@@ -49,13 +49,10 @@ function playerSelection() {
 
 
 function playRound(player, computer) {
+    console.log(player,computer);
     first_screen.classList.add('hidden');
     second_screen.classList.remove('hidden');
     if (playerScore === 5 || computerScore === 5) {
-        second_screen.classList.add('hidden');
-        third_screen.classList.remove('hidden');
-        pc_final.textContent = `${computerScore}`
-        user_final.textContent = `${playerScore}`
         return;
     }
     if(player === computer) {
@@ -111,6 +108,10 @@ function keepScore(score) {
         showScore();
     }
     if (playerScore === 5 || computerScore === 5) {
+        second_screen.classList.add('hidden');
+        third_screen.classList.remove('hidden');
+        pc_final.textContent = `${computerScore}`
+        user_final.textContent = `${playerScore}`
         finalResult()
     }
     //alert(`round score:${roundScore}` ` ` `player score:${playerScore}` ` ` `computer score:${computerScore}`)

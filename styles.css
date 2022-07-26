@@ -122,11 +122,14 @@ body {
     font-size: 3rem;
   }
 
+  .end-text {
+    margin-left: 60px;
+    margin-top: 50px;
+    padding-bottom: 30px;
+  }
+
   .final-text {
     font-size: 2rem;
-    margin-left: 48px;
-    margin-top: 50px;
-    padding-bottom: 20px;
   }
 
   .headline,
